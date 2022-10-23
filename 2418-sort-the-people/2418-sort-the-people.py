@@ -2,8 +2,7 @@ class Solution:
     def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
         
         
-        temp = sorted(heights, reverse = True)
-        res = []
-        for i in temp:
-            res.append(names[heights.index(i)])
-        return res
+        list1=[]
+        for _, c in sorted(zip(heights, names), reverse=True):
+            list1.append(c)
+        return list1
