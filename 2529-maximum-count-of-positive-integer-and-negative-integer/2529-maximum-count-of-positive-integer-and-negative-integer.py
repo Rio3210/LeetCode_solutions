@@ -5,8 +5,7 @@ class Solution:
         for i in nums:
             if i<0:
                 count+=1
-        for i in nums:
-            if i>0:
+            elif i>0:
                 cnt+=1
         return max(count,cnt)
                 
