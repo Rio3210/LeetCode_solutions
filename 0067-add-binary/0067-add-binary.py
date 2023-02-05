@@ -4,11 +4,12 @@ class Solution:
             return '0'
         def convert_num(st):       
             val=0
-            st=st[::-1]
+            # st=st[::-1]
             for i in range(len(st)):
-                
-                if st[i]=='1':
-                    val+=2**i
+                val+=int(st[len(st)-1-i])*2**i
+            
+#                 if st[i]=='1':
+#                     val+=2**i
             return val
         res=""
         summ=convert_num(a)+convert_num(b)
