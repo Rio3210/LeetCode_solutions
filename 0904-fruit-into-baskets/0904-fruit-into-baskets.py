@@ -1,24 +1,27 @@
-class Solution:
-    def totalFruit(self, fruits: List[int]) -> int:
-        basket={}
-        winstart=0
-        maxFruits=0
-        for i in range(len(fruits)):
-            currFruit=fruits[i]
-            if currFruit not in basket:
-                basket[currFruit] = 0 
-            basket[currFruit] += 1
-            
-            while len(basket)>2:
-                remove=fruits[winstart]
+class Solution(object):
+    def totalFruit(self, fruits):
+        
+        basket = {} 
+        maxFruits = 0 
+        windowStart = 0
+
+        for windowEnd in range(len(fruits)):
+            curFruit = fruits[windowEnd] 
+            if curFruit not in basket:
+                basket[curFruit] = 0 
+            basket[curFruit] += 1 
+
+            while len(basket) > 2:
+                remove = fruits[windowStart]
+
                 basket[remove] -= 1 
                 if basket[remove] == 0:
                     del basket[remove] 
-                winstart += 1        
-            maxFruits = max(maxFruits, i - winstart + 1)  
+                windowStart += 1 
+            maxFruits = max(maxFruits, windowEnd - windowStart + 1)
         return maxFruits
-                
-        
-                
-        
+        """
+        :type fruits: List[int]
+        :rtype: int
+        """
         
