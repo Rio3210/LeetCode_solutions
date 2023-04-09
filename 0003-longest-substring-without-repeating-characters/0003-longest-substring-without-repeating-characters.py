@@ -3,7 +3,8 @@ class Solution:
         res={}
         l,r=0,0
         h=0
-        while(r!=len(s)):
+        n=len(s)
+        while(r!=n):
             if(s[r] in res):
                 l+=1
                 r=l
