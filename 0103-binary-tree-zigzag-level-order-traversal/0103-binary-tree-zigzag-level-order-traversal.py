@@ -22,7 +22,8 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
             ans.append(store)
-        for i in range(len(ans)):
+        n=len(ans)
+        for i in range(n):
             if i%2!=0:
-                ans[i].reverse()
+                ans[i]=ans[i][::-1]
         return ans
