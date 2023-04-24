@@ -23,6 +23,6 @@ class Solution:
                     queue.append(node.right)
             ans.append(store)
         for i in range(len(ans)):
-            if i%2==1:
+            if i%2!=0:
                 ans[i].reverse()
         return ans
