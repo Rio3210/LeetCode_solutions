@@ -14,4 +14,4 @@ class Solution:
             
             cache[(l,r)]=max( helper(l+1,r)+ left, helper(l,r-1)+right)
             return cache[(l,r)]
-        return helper(0,len(piles)-1) > len(piles)//2
+        return helper(0,len(piles)-1) > sum(piles)//2
